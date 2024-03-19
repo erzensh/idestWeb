@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Text to be typed
     var welcomeText = "Welcome to Id Est";
     var description = "We are your premier destination for cutting-edge content creation and social media management.";
-    var speed = 100; // Typing speed in milliseconds
+    var speed = 70; // Typing speed in milliseconds (faster speed)
 
     // Typing animation function
     function typeWriter(text, element, index, callback) {

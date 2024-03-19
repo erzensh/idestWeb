@@ -15,9 +15,9 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px 0;
     z-index: 999;
+    text-shadow: 4px 4px 7px black; /* Increase blur radius for more blurry shadow */
 }
 
 .container {
@@ -26,7 +26,31 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Make container relative to position the line */
 }
+
+/* Main line for hover and animation */
+.line {
+    position: absolute;
+    padding-right: 1px;
+    bottom: -2px; /* Adjust to align the line properly */
+    left: 0;
+    height: 2px;
+    background-color: transparent;
+    transition: width 0.3s, background-color 0.3s; /* Transition for width and background color */
+    width: 0; /* Start with a width of 0 */
+}
+
+/* Change line background color on hover */
+.nav-links li:hover .line {
+    background-color: white;
+}
+
+/* Set full width for line on hover */
+.nav-links li:hover .line {
+    width: 100%;
+}
+
 
 .logo {
     color: white;
@@ -51,7 +75,30 @@ p {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    border-bottom: 2px solid transparent;
+    /* Add a transparent bottom border initially */
+    transition: border-color 0.3s ease;
+    /* Add transition for smooth effect */
 }
+
+
+/* Add styles for the links on hover */
+.nav-links li a:hover {
+    border-bottom: 2px solid white;
+    /* Change the bottom border color on hover */
+}
+
+.nav-links .line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: white;
+    transition: left 0.3s, width 0.3s;
+    width: 0;
+}
+
+
 
 #particles-js {
     position: relative;
@@ -70,6 +117,7 @@ p {
     color: white;
 }
 
+
 .welcome-text h1 {
     font-size: 56px;
     color: #fff;
@@ -81,7 +129,6 @@ p {
     color: #fff;
 }
 
-
 .typed-paragraph::after {
     content: '|';
     display: inline-block;
@@ -89,16 +136,19 @@ p {
 }
 
 .cursor {
-    color: #fff; 
+    color: #fff;
     font-size: 1em;
     display: inline-block;
     animation: cursor-blink 1s infinite;
 }
 
 @keyframes cursor-blink {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
@@ -108,6 +158,12 @@ p {
     font-family: 'Rubik Glitch', sans-serif;
 }
 
+.aboutUsRubik {
+    font-family: 'Rubik Glitch', sans-serif;
+
+    font-weight: 100;
+}
+
 .about-section {
     background-color: #f2f2f2;
     padding: 50px 0;
@@ -115,8 +171,43 @@ p {
 }
 
 .about-section .container {
-    text-align: center;
-    position: relative; /* Needed for absolute positioning */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-section .about-text {
+    flex-basis: calc(50% - 20px);
+    /* Adjust as needed, considering margin and padding */
+    text-align: left;
+}
+
+.about-section .image-gallery {
+    flex-basis: calc(50% - 20px);
+    /* Adjust as needed, considering margin and padding */
+    text-align: right;
+}
+
+.about-section img {
+    max-width: 100%;
+    /* Adjust image width */
+    display: block;
+    margin: 0 auto 20px;
+    /* Adjust as needed */
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    /* Add animation */
+}
+
+/* Delay animation for each image */
+.about-section img:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.about-section img:nth-child(2) {
+    animation-delay: 1s;
 }
 
 .about-section h2 {
@@ -130,27 +221,31 @@ p {
     color: #555;
 }
 
-.about-section img {
-    width: 100%;
-    max-width: 400px;
-    display: block;
-    margin: 0 auto 20px; /* Adjust as needed */
-    animation: fadeInUp 1s ease forwards; /* Add animation */
-}
-
 .about-section .image-gallery {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    flex-basis: calc(50% - 20px);
+    /* Adjust as needed, considering margin and padding */
+    text-align: right;
+    margin-top: 80px;
+    /* Add margin from the top */
 }
 
 .about-section img {
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
+    /* Adjust the maximum width of the image */
+    height: auto;
+    /* Ensures image aspect ratio is maintained */
     display: block;
-    margin: 0 auto 20px; /* Adjust as needed */
+    margin: 0 auto 20px;
+    /* Adjust as needed */
     opacity: 0;
-    animation: fadeInUp 1s ease forwards; /* Add animation */
+    animation: fadeInUp 1s ease forwards;
+    /* Add animation */
+}
+
+/* Delay animation for each image */
+.about-section img:nth-child(1) {
+    animation-delay: 0.5s;
 }
 
 @keyframes fadeInUp {
@@ -158,6 +253,7 @@ p {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);

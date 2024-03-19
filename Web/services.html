@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id Est - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ii.scss">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Rubik Glitch' rel='stylesheet'>
+</head>
+<body class="home-page">
+    <nav id="navbar" class="navbar">
+        <div class="container">
+            <a href="#" class="logo glitch" data-text="Id Est">Id <span class="rubik-glitch">Est</span></a>
+
+            <ul class="nav-links">
+                <li class="home"><a href="#">Home</a></li>
+                <li class="about"><a href="#">About</a></li>
+                <li class="services"><a href="#services.html">Services</a></li>
+                <li class="contact"><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div id="particles-js"></div>
+
+    <div class="welcome-text">
+        <h1><span class="id-est"></span><span class="cursor">|</span></h1>
+        <p class="typed-paragraph"></p>
+    </div>
+
+    <section class="about-section" id="about-section">
+        <div class="container">
+            <div class="about-text">
+                <h2>About&nbsp; <span class="aboutUsRubik">Id Est</span></h2>
+
+                <p>We are a team of dedicated professionals striving to provide cutting-edge solutions in content creation and social media management. Our mission is to help businesses thrive in the digital landscape by delivering compelling and engaging content tailored to their audience.</p>
+            </div>
+            <div class="image-gallery">
+                <img src="/Img/kal-visuals-DqmXihYx5UE-unsplash.jpg" alt="Image description">
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about-section">
+        <div class="container">
+            <div class="about-text">
+                <h2>About&nbsp; <span class="aboutUsRubik">Id Est</span></h2>
+
+                <p>We are a team of dedicated professionals striving to provide cutting-edge solutions in content creation and social media management. Our mission is to help businesses thrive in the digital landscape by delivering compelling and engaging content tailored to their audience.</p>
+            </div>
+            <div class="image-gallery">
+                <img src="/Img/kal-visuals-DqmXihYx5UE-unsplash.jpg" alt="Image description">
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="particles.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="aboutus.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // Get the current page URL
+    let url = window.location.href;
+    
+    // Check which page is active and add the active class to the corresponding link
+    if (url.includes("about")) {
+        document.querySelector(".nav-links li.about a").classList.add("active");
+    } else if (url.includes("services")) {
+        document.querySelector(".nav-links li.services a").classList.add("active");
+    } else if (url.includes("contact")) {
+        document.querySelector(".nav-links li.contact a").classList.add("active");
+    } else {
+        document.querySelector(".nav-links li.home a").classList.add("active");
+    }
+});
+
+
+    </script>
+    
+    </script>
+    
+    
+</body>
+</html>
