@@ -228,6 +228,20 @@ p {
     opacity: 1; 
     border-radius: 30px;
 }
+.about-image {
+    position: absolute;
+    top: calc(30% + 120px); /* Initial position */
+    right: 10%; /* Initial position */
+    max-width: 550px; /* Adjust the maximum width of the image */
+    max-height: 750px; /* Adjust the maximum width of the image */
+    text-align: right;
+}
+
+.about-section.sticky .about-image {
+    position: fixed;
+    top: 20px; /* Adjust the top position when it becomes sticky */
+    right: calc(10% + 450px); /* Adjust the right position when it becomes sticky */
+}
 
 
 
