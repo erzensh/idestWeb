@@ -28,7 +28,7 @@
         </div>
     </nav>
 
-    <div class="line"></div> <!-- Move line outside of the list -->
+    <div class="line"></div> <!--Move line outside of the list-->
 
     <div id="particles-js"></div>
 
@@ -36,7 +36,18 @@
         <h1><span class="id-est"></span><span class="cursor">|</span></h1>
         <p class="typed-paragraph"></p>
     </div>
-
+    <div class="welcome-text"> <!-- This is the duplicate -->
+        <p class="typed-paragraph"></p>
+        <div class="circle-button" onclick="scrollToAbout()">
+            <img src="/Img/image_2024-03-21_011820670-removebg-preview.png" alt="Rotating Image" class="inner-image">
+            <div class="glowing-circle"></div> <!-- Circle with glowing effect -->
+            <div class="arrow">&#8595;</div>
+        </div>
+    </div>
+    
+    
+    
+    
     <section class="about-section" id="about-section">
         <div class="container">
             <div class="about-text">
@@ -52,7 +63,7 @@
                     are committed to delivering excellence in every project.</p>
             </div>
             <div class="image-gallery"> <!-- Add animate class here -->
-                <img src="/Img/scott-graham-5fNmWej4tAA-unsplash.jpg" alt="Image description">
+                <img src="/Img/AboutUsImg1.png" alt="Image description">
             </div>
 
 
@@ -210,6 +221,10 @@
         // Initial check for scroll animation when the page loads
         handleScrollAnimation();
 
+        function scrollToAbout() {
+    const aboutSection = document.getElementById('about-section');
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+}
 
     </script>
 </body>

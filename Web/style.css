@@ -325,7 +325,7 @@ p {
 
 .lower-cube {
     position: absolute;
-    top: 90%; /* Adjust the position */
+    top: 70%; /* Adjust the position */
     right: 630px; /* Adjust the position */
     transform: translateY(50%); /* Adjust the transformation */
 }
@@ -466,3 +466,67 @@ p {
     }
 }
 
+.circle-button {
+    position: absolute;
+    bottom: -250px; /* Adjusted to bring the button lower */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+
+.circle-button:hover {
+    transform: translateX(-50%) scale(1.1); /* Scale up on hover */
+}
+
+
+.inner-image {
+    position: absolute;
+    top: -14px; /* Adjust position for better centering */
+    right: -12px; /* Adjust position for better centering */
+    width: 125%; /* Increase size to fit better */
+    height: 125%; /* Increase size to fit better */
+    animation: spin 12s linear infinite; /* Slow down the spin */
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(-180deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+
+.arrow {
+    position: absolute;
+    bottom: 50%; /* Position in the middle vertically */
+    left: 50%; /* Position in the middle horizontally */
+    transform: translate(-50%, 50%); /* Adjust transformation to center */
+    font-size: 24px;
+}
+
+.glowing-circle {
+    position: absolute;
+    top: 50%; /* Position in the middle vertically */
+    left: 50%; /* Position in the middle horizontally */
+    transform: translate(-50%, -50%);
+    width: 120px; /* Adjust the width of the circle */
+    height: 120px; /* Adjust the height of the circle */
+    border: 2px solid #fff; /* Adjust the color and opacity of the circle */
+    border-radius: 50%; /* Shape the div into a circle */
+    box-shadow: 0 0 20px 0px #fff; /* Adjust the spread radius and color for the glowing effect */
+    animation: glow 3s infinite alternate; /* Add glowing animation */
+}
