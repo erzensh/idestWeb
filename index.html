@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Id Est - Home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="ii.scss">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Rubik Glitch' rel='stylesheet'>
@@ -28,24 +28,36 @@
         </div>
     </nav>
 
-    <!-- <div class="line"></div> -->
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Add a separate container for stacked navigation links -->
+    <div class="stacked-nav-links">
+        <!-- Copy the existing navigation links here -->
+        <ul class="nav-links">
+            <li class="home"><a href="#home-section">Home</a></li>
+            <li class="about"><a href="#about-section">About</a></li>
+            <li class="services"><a href="#services-section">Services</a></li>
+            <li class="contact"><a href="#contact-section">Contact</a></li>
+        </ul>
+    </div>
 
     <div id="particles-js"></div>
 
     <div class="welcome-text">
-        <h1><span class="id-est">
- 
-            </span><span class="cursor">|</span></h1>
+        <h1><span class="id-est"></span><span class="cursor">|</span></h1>
         <p class="typed-paragraph"></p>
-    </div>
-    <div class="welcome-text"> <!-- This is the duplicate -->
-        <p class="typed-paragraph"></p>
+        <!-- Spinning button -->
         <div class="circle-button" onclick="scrollToAbout()">
             <img src="/assets/image_2024-03-21_011820670-removebg-preview.png" alt="Rotating Image" class="inner-image">
             <div class="glowing-circle"></div> <!-- Circle with glowing effect -->
             <div class="arrow">&#8595;</div>
         </div>
     </div>
+    
 
 
 
@@ -69,7 +81,7 @@
             </div>
 
 
-            <div class="cube-container">
+            <div class="cube-container upper-cube">
                 <div class="cube">
                     <div class="front"></div>
                     <div class="back"></div>
@@ -117,53 +129,19 @@
 
                 </div>
             </div>
-            <div class="triangle-container">
-                <div class="triangle"></div>
-            </div>
-
         </div>
     </section>
-
-    <section class="contact-section" id="contact-section">
-        <div class="container">
-            <div class="services-text">
-                <h2>Our Services</h2>
-                <div class="animated-line-services"></div>
-                <p>We offer a range of services to help businesses succeed in the digital landscape. Our expertise
-                    includes:</p>
-                <ul>
-                    <li>Content Creation</li>
-                    <li>Social Media Management</li>
-                    <li>Digital Marketing</li>
-                    <li>Search Engine Optimization (SEO)</li>
-                </ul>
-            </div>
-
-            <div class="services-images">
-                <div class="service">
-                    <img src="/assets/parker-byrd-gxD8hCmi0IQ-unsplash.jpg" alt="Service 1">
-
-                </div>
-            </div>
-            <div class="triangle-container">
-                <div class="triangle"></div>
-            </div>
-
-        </div>
-    </section>
-
-
 
 
     <div class='flex justify-center xl:hidden relative'>
         <!--ProjectsBtn-->
     </div>
 
-    <script type="text/javascript" src="particles.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="aboutus.js"></script>
-    <script type="text/javascript" src="learnmore.js"></script>
+    <script type="text/javascript" src="/js/particles.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    <script type="text/javascript" src="/js/aboutus.js"></script>
+    <!-- <script type="text/javascript" src="/js/"></script> -->
 
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -229,39 +207,39 @@
 
         // Function to handle scroll animation for navbar line
         function handleNavbarLine() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links li');
-    const line = document.querySelector('.line');
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            const line = document.querySelector('.line');
 
-    sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            // Remove 'active' class from all nav links
-            navLinks.forEach(navLink => {
-                navLink.classList.remove('active');
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    // Remove 'active' class from all nav links
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+
+                    // Add 'active' class to the corresponding nav link
+                    navLinks[index].classList.add('active');
+
+                    // Get the width of the active nav link
+                    const width = navLinks[index].offsetWidth;
+
+                    // Get the left position of the line relative to the section
+                    const left = rect.left + (rect.width - width) / 2;
+
+                    // Set the width and left position of the line
+                    line.style.width = `${width}px`;
+                    line.style.left = `${left}px`;
+                }
             });
-
-            // Add 'active' class to the corresponding nav link
-            navLinks[index].classList.add('active');
-
-            // Get the width of the active nav link
-            const width = navLinks[index].offsetWidth;
-
-            // Get the left position of the line relative to the section
-            const left = rect.left + (rect.width - width) / 2;
-
-            // Set the width and left position of the line
-            line.style.width = `${width}px`;
-            line.style.left = `${left}px`;
         }
-    });
-}
 
-// Call the function when the window is scrolled
-window.addEventListener('scroll', handleNavbarLine);
+        // Call the function when the window is scrolled
+        window.addEventListener('scroll', handleNavbarLine);
 
-// Call the function when the window is resized
-window.addEventListener('resize', handleNavbarLine);
+        // Call the function when the window is resized
+        window.addEventListener('resize', handleNavbarLine);
 
 
 
@@ -314,17 +292,42 @@ window.addEventListener('resize', handleNavbarLine);
             contactSection.scrollIntoView({ behavior: 'smooth' });
         }
 
-        window.addEventListener('scroll', function() {
-    var aboutSection = document.querySelector('.about-section');
-    var aboutImage = document.querySelector('.about-image');
-    var aboutSectionOffset = aboutSection.offsetTop;
+        window.addEventListener('scroll', function () {
+            var aboutSection = document.querySelector('.about-section');
+            var aboutImage = document.querySelector('.about-image');
+            var aboutSectionOffset = aboutSection.offsetTop;
 
-    if (window.pageYOffset > aboutSectionOffset) {
-        aboutSection.classList.add('sticky');
-    } else {
-        aboutSection.classList.remove('sticky');
+            if (window.pageYOffset > aboutSectionOffset) {
+                aboutSection.classList.add('sticky');
+            } else {
+                aboutSection.classList.remove('sticky');
+            }
+        });
+
+        function toggleNav() {
+        // Toggle the 'active' class on the stacked navigation links
+        document.querySelector('.stacked-nav-links').classList.toggle('active');
     }
-});
+
+    function toggleNav() {
+        // Toggle the 'active' class on the stacked navigation links
+        const stackedNavLinks = document.querySelector('.stacked-nav-links');
+        stackedNavLinks.classList.toggle('active');
+        
+        // Toggle the 'active' class on the hamburger menu bars for animation
+        const hamburgerBars = document.querySelectorAll('.bar');
+        hamburgerBars.forEach(bar => {
+            bar.classList.toggle('change');
+        });
+    }
+
+    // Click event listener for the hamburger menu
+    document.querySelector('.hamburger-menu').addEventListener('click', function () {
+        // Call the toggleNav function when the hamburger menu is clicked
+        toggleNav();
+    });
+
+
 
     </script>
 </body>

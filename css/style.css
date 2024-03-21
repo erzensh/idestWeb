@@ -269,6 +269,353 @@ p {
 .about-section h2 {
     font-size: 36px;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    background: rgb(0, 0, 0); /* Set the background color */
+    color: white;
+}
+
+
+p {
+    font-weight: 500;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 999;
+    text-shadow: 4px 4px 7px black; /* Increase blur radius for more blurry shadow */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Make container relative to position the line */
+}
+
+.logo {
+    color: white;
+    font-family: 'Rubik Glitch', sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative; /* Add relative positioning to the parent */
+}
+
+/* CSS for the line */
+.line {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #fff; /* Adjust the color as needed */
+    transition: width 0.3s ease, left 0.3s ease; /* Add transition for smooth animation */
+}
+
+.nav-links li {
+    margin-left: 20px;
+    position: relative; /* Add relative positioning to the list items */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease; /* Add transition for smooth effect */
+}
+
+.nav-links li.active a {
+    border-color: white; /* Change border color for active link */
+}
+.line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #fff; /* Adjust the color as needed */
+    transition: width 0.3s ease, left 0.3s ease; /* Add transition for smooth animation */
+}
+
+/* CSS to highlight the active link */
+.nav-links li.active a {
+    color: #fff; /* Change the color of the active link */
+}
+
+/* CSS to animate the line to fit the size of the clicked item */
+.nav-links li a {
+    position: relative;
+    color: #fff; /* Change the color of the links */
+    text-decoration: none;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* Adjust the color as needed */
+    transition: width 0.3s ease, left 0.3s ease; /* Add transition for smooth animation */
+}
+
+.nav-links li a:hover::after,
+.nav-links li.active a::after {
+    width: 100%;
+    left: 0;
+}
+
+#particles-js {
+    position: relative;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    z-index: 1;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: white;
+}
+
+.welcome-text h1 {
+    font-size: 56px;
+    color: #fff;
+}
+
+.welcome-text p {
+    font-size: 28px;
+    width: 600px;
+    color: #fff;
+}
+
+.typed-paragraph::after {
+    content: '|';
+    display: inline-block;
+    animation: cursor-blink 1s infinite;
+}
+
+.cursor {
+    color: #fff;
+    font-size: 1em;
+    display: inline-block;
+    animation: cursor-blink 1s infinite;
+}
+
+@keyframes cursor-blink {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.rubik-glitch {
+    font-family: 'Rubik Glitch', sans-serif;
+}
+
+.aboutUsRubik {
+    font-family: 'Rubik Glitch', sans-serif;
+    font-weight: 100;
+}
+
+.about-section {
+    background-color: #000000;
+    padding: 100px 0; /* Increase padding to make the section longer */
+    margin-top: 80px;
+    margin-bottom: 200px;
+}
+
+.about-text h2 {
+    margin-bottom: 10px; /* Adjust margin bottom to reduce the gap */
+}
+
+.about-section .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-section .about-text {
+    flex-basis: calc(50% - 20px);
+    text-align: left;
+}
+.image-gallery {
+    position: absolute;
+    top: calc(30% + 120px); 
+    top: 60px;
+    right: 10%; /* Adjust this value as per your layout */
+    max-width: 550px; /* Adjust the maximum width of the image */
+    max-height: 750px; /* Adjust the maximum width of the image */
+    text-align: right;
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.image-gallery img {
+    max-width: 100%;
+    display: block;
+    margin: 0;
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.5s ease-in-out; /* Add transition for smooth fade-in effect */
+}
+
+.image-gallery.animate img {
+    opacity: 1; 
+    border-radius: 30px;
+}
+.about-image {
+    position: absolute;
+    top: calc(30% + 120px); /* Initial position */
+    right: 10%; /* Initial position */
+    max-width: 550px; /* Adjust the maximum width of the image */
+    max-height: 750px; /* Adjust the maximum width of the image */
+    text-align: right;
+}
+
+.about-section.sticky .about-image {
+    position: fixed;
+    top: 20px; /* Adjust the top position when it becomes sticky */
+    right: calc(10% + 450px); /* Adjust the right position when it becomes sticky */
+}
+
+
+
+.about-section .image-gallery {
+    flex-basis: calc(50% - 20px);
+    text-align: right;
+}
+
+.about-section img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.about-section img:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.about-section img:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.about-section h2 {
+    font-size: 36px;
+}
+.cube-container {
+    position: absolute;
+    top: 15%;
+    right: 110px; /* Adjust this value as per your layout */
+    transform: translateY(-50%);
+    perspective: 1000px; /* Adjust the perspective for 3D effect */
+}
+
+/* Add glowing effect */
+.cube-container::before {
+    content: '';
+    position: absolute;
+    width: 120px; /* Adjust width and height to match the cube */
+    height: 120px;
+    border-radius: 10px; /* Adjust the border radius as needed */
+    background: rgba(255, 255, 255, 0.5); /* Adjust color and opacity as needed */
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Adjust spread radius and color */
+    top: -10px; /* Adjust position to overlap the cube */
+    left: -10px; /* Adjust position to overlap the cube */
+    z-index: -1;
+}
+
+.cube div {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 10px; /* Adjust the border radius as needed */
+}
+
+.cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 5s infinite linear;
+    border-radius: 10px; /* Adjust the border radius as needed */
+}
+
+
+
+.cube .front { transform: translateZ(50px); }
+.cube .back { transform: rotateY(180deg) translateZ(50px); }
+.cube .right { transform: rotateY(90deg) translateZ(50px); }
+.cube .left { transform: rotateY(-90deg) translateZ(50px); }
+.cube .top { transform: rotateX(90deg) translateZ(50px); }
+.cube .bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+@keyframes rotateCube {
+    0% { transform: rotateX(0) rotateY(0); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+
+.cube:hover {
+    animation: rotateCubeHover 0.5s ease forwards;
+}
+
+@keyframes rotateCubeHover {
+    from {
+        transform: rotateX(0) rotateY(0);
+    }
+    to {
+        transform: rotateX(720deg) rotateY(720deg);
+    }
+}
+
+
+.lower-cube {
+    position: absolute;
+    top: 70%; /* Adjust the position */
+    right: 630px; /* Adjust the position */
+    transform: translateY(50%); /* Adjust the transformation */
+}
+
 .cube-container {
     position: absolute;
     top: 15%;
@@ -458,28 +805,6 @@ p {
     }
 }
 
-.triangle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotateZ(-45deg);
-    width: 100px;
-    height: 100px;
-    background-color: #ffffff; /* Triangle color */
-    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-    z-index: 1; /* Ensure triangle is above the image */
-    animation: rotateTriangle 5s infinite linear; /* Apply the animation */
-}
-
-@keyframes rotateTriangle {
-    0% {
-        transform: translate(-50%, -50%) rotateZ(-45deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotateZ(315deg); /* Rotate the triangle */
-    }
-}
-
 .circle-button {
     position: absolute;
     bottom: -250px; /* Adjusted to bring the button lower */
@@ -543,4 +868,395 @@ p {
     border-radius: 50%; /* Shape the div into a circle */
     box-shadow: 0 0 20px 0px #fff; /* Adjust the spread radius and color for the glowing effect */
     animation: glow 3s infinite alternate; /* Add glowing animation */
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Change to a column layout */
+        align-items: center; /* Center items */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Display navigation links vertically */
+        align-items: center; /* Center navigation links */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Add space between navigation links */
+    }
+
+    .line {
+        display: none; /* Hide the line on smaller screens */
+    }
+
+    .welcome-text {
+        width: 90%; /* Adjust width for smaller screens */
+        text-align: center; /* Center text */
+    }
+
+    .welcome-text h1 {
+        font-size: 36px; /* Decrease font size */
+    }
+
+    .welcome-text p {
+        font-size: 18px; /* Decrease font size */
+    }
+
+    .about-section .container,
+    .services-section .container {
+        flex-direction: column; /* Change to a column layout */
+        align-items: center; /* Center items */
+    }
+
+    .image-gallery,
+    .about-image,
+    .services-images {
+        position: static; /* Remove absolute positioning */
+        max-width: 100%; /* Adjust maximum width */
+        margin: 20px 0; /* Add space between elements */
+    }
+
+    .triangle-container {
+        display: none; /* Hide triangle container */
+    }
+
+    .circle-button {
+        bottom: 20px; /* Adjust bottom spacing */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .welcome-text h1 {
+        font-size: 28px; /* Further decrease font size */
+    }
+
+    .welcome-text p {
+        font-size: 16px; /* Further decrease font size */
+    }
+
+    .about-section,
+    .services-section {
+        padding: 50px 0; /* Decrease padding */
+    }
+}
+
+/* Hide stacked navigation links by default */
+.stacked-nav-links {
+    display: none;
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Show stacked navigation links for smaller screens */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide original navigation links */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+        position: fixed; /* Make the hamburger menu sticky */
+        top: 10px; /* Adjust the top position */
+        right: 20px; /* Adjust the right position */
+        z-index: 1000; /* Ensure the hamburger menu appears above other elements */
+    }
+
+    .stacked-nav-links {
+        display: block; /* Show stacked navigation links */
+    }
+}
+
+
+/* CSS for responsive design */
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 424px) { /* iPhone 11 width */
+    body {
+        font-size: 14px; /* Decrease base font size */
+    }
+
+    .container {
+        width: 95%; /* Adjust container width */
+    }
+
+    .welcome-text {
+        width: 100%; /* Adjust width for smaller screens */
+        text-align: center; /* Center text */
+        word-wrap: break-word; /* Force text to wrap */
+        white-space: normal;
+    }
+
+    .welcome-text h1 {
+        font-size: 24px; 
+        /* Decrease font size */
+    }
+
+    .welcome-text p {
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    .typed-paragraph {
+        padding-left: -150; /* Remove negative padding */
+        word-wrap: break-word; /* Force text to wrap */
+        white-space: normal; /* Allow text to wrap onto new lines */
+    }
+    
+
+    .nav-links {
+        flex-direction: column; /* Display navigation links vertically */
+        align-items: center; /* Center navigation links */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Add space between navigation links */
+    }
+
+    .line {
+        display: none; /* Hide the line on smaller screens */
+    }
+
+    .about-section,
+    .services-section {
+        padding: 50px 0; /* Decrease padding */
+    }
+
+    .image-gallery,
+    .about-image,
+    .services-images {
+        max-width: 100%; /* Adjust maximum width */
+        margin: 20px 0; /* Add space between elements */
+    }
+
+    .triangle-container {
+        display: none; /* Hide triangle container */
+    }
+
+    .circle-button {
+        bottom: -140px; /* Adjust bottom spacing */
+    }
+
+    .about-section .container {
+        position: relative;
+    }
+
+    .about-text {
+        position: relative;
+        padding-bottom: 200px; /* Adjust the space for the spinning cubes */
+    }
+
+    .cube-container,
+    .lower-cube {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -250px; /* Adjust the distance from the text */
+    }
+
+    .upper-cube{
+        top: 500px;
+        right: 300px;
+    }
+
+    /* Adjust spacing between cubes if needed */
+    .lower-cube {
+        top: 500px;
+        left: 20px; /* Adjust the distance from the text */
+    }
+
+    /* Adjust the upper cube to the same position as the lower cube */
+    .cube-container {
+        bottom: -200px; /* Adjust the distance from the text */
+    }
+
+    .services-section {
+        padding: 30px 0; /* Decrease padding */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center horizontally */
+        margin-left: 10px; /* Push to the left side */
+    }
+
+    .services-text {
+        text-align: center; /* Center the text */
+        padding-right: 90px;
+
+    }
+
+    .services-text h2 {
+        font-size: 24px; 
+        padding-right: -90px;
+        /* Decrease font size */
+    }
+
+    .services-text p {
+        font-size: 14px;
+        padding-right: -90px;
+    }
+
+    .services-images {
+        margin-top: 20px; /* Add space between text and images */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the images */
+    }
+
+    .service {
+        margin: 0 10px 20px; /* Add space between service images */
+    }
+}
+
+@media screen and (max-width: 494px) { /* iPhone 11 width */
+    body {
+        font-size: 14px; /* Decrease base font size */
+    }
+
+    .container {
+        width: 95%; /* Adjust container width */
+    }
+
+    .welcome-text {
+        width: 100%; /* Adjust width for smaller screens */
+        text-align: center; /* Center text */
+        word-wrap: break-word; /* Force text to wrap */
+        white-space: normal;
+    }
+
+    .welcome-text h1 {
+        font-size: 24px; 
+        /* Decrease font size */
+    }
+
+    .welcome-text p {
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    .typed-paragraph {
+        padding-left: -150; /* Remove negative padding */
+        word-wrap: break-word; /* Force text to wrap */
+        white-space: normal; /* Allow text to wrap onto new lines */
+    }
+    
+
+    .nav-links {
+        flex-direction: column; /* Display navigation links vertically */
+        align-items: center; /* Center navigation links */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Add space between navigation links */
+    }
+
+    .line {
+        display: none; /* Hide the line on smaller screens */
+    }
+
+    .about-section,
+    .services-section {
+        padding: 50px 0; /* Decrease padding */
+    }
+
+    .image-gallery,
+    .about-image,
+    .services-images {
+        max-width: 100%; /* Adjust maximum width */
+        margin: 20px 0; /* Add space between elements */
+    }
+
+    .triangle-container {
+        display: none; /* Hide triangle container */
+    }
+
+    .circle-button {
+        bottom: -140px; /* Adjust bottom spacing */
+    }
+
+    .about-section .container {
+        position: relative;
+    }
+
+    .about-text {
+        position: relative;
+        padding-bottom: 200px; /* Adjust the space for the spinning cubes */
+    }
+
+    .cube-container,
+    .lower-cube {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -250px; /* Adjust the distance from the text */
+    }
+
+    .upper-cube{
+        top: 500px;
+        right: 300px;
+    }
+
+    /* Adjust spacing between cubes if needed */
+    .lower-cube {
+        top: 500px;
+        left: 20px; /* Adjust the distance from the text */
+    }
+
+    /* Adjust the upper cube to the same position as the lower cube */
+    .cube-container {
+        bottom: -200px; /* Adjust the distance from the text */
+    }
+
+    .services-section {
+        padding: 30px 0; /* Decrease padding */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center horizontally */
+        margin-left: 10px; /* Push to the left side */
+    }
+
+    .services-text {
+        text-align: center; /* Center the text */
+        padding-right: 90px;
+
+    }
+
+    .services-text h2 {
+        font-size: 24px; 
+        padding-right: -90px;
+        /* Decrease font size */
+    }
+
+    .services-text p {
+        font-size: 14px;
+        padding-right: -90px;
+    }
+
+    .services-images {
+        margin-top: 20px; /* Add space between text and images */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the images */
+    }
+
+    .service {
+        margin: 0 10px 20px; /* Add space between service images */
+    }
 }
