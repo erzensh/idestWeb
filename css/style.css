@@ -178,7 +178,8 @@ p {
     background-color: #000000;
     padding: 100px 0; /* Increase padding to make the section longer */
     margin-top: 80px;
-    margin-bottom: 200px;
+    margin-bottom: 70px;
+    position: relative;
 }
 
 .about-text h2 {
@@ -191,12 +192,8 @@ p {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-}
+} 
 
-.about-section .about-text {
-    flex-basis: calc(50% - 20px);
-    text-align: left;
-}
 .image-gallery {
     position: absolute;
     top: calc(30% + 120px); 
@@ -218,207 +215,19 @@ p {
     }
 }
 
-.image-gallery img {
-    max-width: 100%;
-    display: block;
-    margin: 0;/* Start with opacity 0 */
-}
-
-.about-image {
-    position: absolute;
-    top: calc(30% + 120px); /* Initial position */
-    right: 10%; /* Initial position */
-    max-width: 550px; /* Adjust the maximum width of the image */
-    max-height: 750px; /* Adjust the maximum width of the image */
-    text-align: right;
-}
-
-.about-section.sticky .about-image {
-    position: fixed;
-    top: 20px; /* Adjust the top position when it becomes sticky */
-    right: calc(10% + 450px); /* Adjust the right position when it becomes sticky */
-}
-
-
-
-.about-section .image-gallery {
-    flex-basis: calc(50% - 20px);
-    text-align: right;
-}
-
-.about-section img {
-    max-width: 100%;
-    display: block;
-    margin: 0 auto 20px;
-    border-radius: 10px;
-}
-
-.about-section img:nth-child(1) {
-    animation-delay: 0.5s;
-}
-
-.about-section img:nth-child(2) {
-    animation-delay: 1s;
-}
-
 .about-section h2 {
     font-size: 36px;
+} 
+
+.about-text, .services-text {
+    text-align: center;
+    margin: 0 auto;
 }
-.cube-container {
-    position: absolute;
-    top: 15%;
-    right: 110px; /* Adjust this value as per your layout */
-    transform: translateY(-50%);
-    perspective: 1000px; /* Adjust the perspective for 3D effect */
-}
-
-/* Add glowing effect */
-.cube-container::before {
-    content: '';
-    position: absolute;
-    width: 120px; /* Adjust width and height to match the cube */
-    height: 120px;
-    border-radius: 10px; /* Adjust the border radius as needed */
-    background: rgba(255, 255, 255, 0.5); /* Adjust color and opacity as needed */
-    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Adjust spread radius and color */
-    top: -10px; /* Adjust position to overlap the cube */
-    left: -10px; /* Adjust position to overlap the cube */
-    z-index: -1;
-}
-
-.cube div {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: white;
-    border-radius: 10px; /* Adjust the border radius as needed */
-}
-
-.cube {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: rotateCube 5s infinite linear;
-    border-radius: 10px; /* Adjust the border radius as needed */
-}
-
-
-
-.cube .front { transform: translateZ(50px); }
-.cube .back { transform: rotateY(180deg) translateZ(50px); }
-.cube .right { transform: rotateY(90deg) translateZ(50px); }
-.cube .left { transform: rotateY(-90deg) translateZ(50px); }
-.cube .top { transform: rotateX(90deg) translateZ(50px); }
-.cube .bottom { transform: rotateX(-90deg) translateZ(50px); }
-
-@keyframes rotateCube {
-    0% { transform: rotateX(0) rotateY(0); }
-    100% { transform: rotateX(360deg) rotateY(360deg); }
-}
-
-
-.cube:hover {
-    animation: rotateCubeHover 0.5s ease forwards;
-}
-
-@keyframes rotateCubeHover {
-    from {
-        transform: rotateX(0) rotateY(0);
-    }
-    to {
-        transform: rotateX(720deg) rotateY(720deg);
-    }
-}
-
-
-.lower-cube {
-    position: absolute;
-    top: 50%; /* Adjust the position */
-    right: 630px; /* Adjust the position */
-    transform: translateY(50%); /* Adjust the transformation */
-}
-
-.cube-container {
-    position: absolute;
-    top: 15%;
-    right: 110px; /* Adjust this value as per your layout */
-    transform: translateY(-50%);
-    perspective: 1000px; /* Adjust the perspective for 3D effect */
-}
-
-/* Add glowing effect */
-.cube-container::before {
-    content: '';
-    position: absolute;
-    width: 120px; /* Adjust width and height to match the cube */
-    height: 120px;
-    border-radius: 10px; /* Adjust the border radius as needed */
-    background: rgba(255, 255, 255, 0.5); /* Adjust color and opacity as needed */
-    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Adjust spread radius and color */
-    top: -10px; /* Adjust position to overlap the cube */
-    left: -10px; /* Adjust position to overlap the cube */
-    z-index: -1;
-}
-
-.cube div {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: white;
-    border-radius: 10px; /* Adjust the border radius as needed */
-}
-
-.cube {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: rotateCube 5s infinite linear;
-    border-radius: 10px; /* Adjust the border radius as needed */
-}
-
-
-
-.cube .front { transform: translateZ(50px); }
-.cube .back { transform: rotateY(180deg) translateZ(50px); }
-.cube .right { transform: rotateY(90deg) translateZ(50px); }
-.cube .left { transform: rotateY(-90deg) translateZ(50px); }
-.cube .top { transform: rotateX(90deg) translateZ(50px); }
-.cube .bottom { transform: rotateX(-90deg) translateZ(50px); }
-
-@keyframes rotateCube {
-    0% { transform: rotateX(0) rotateY(0); }
-    100% { transform: rotateX(360deg) rotateY(360deg); }
-}
-
-
-.cube:hover {
-    animation: rotateCubeHover 0.5s ease forwards;
-}
-
-@keyframes rotateCubeHover {
-    from {
-        transform: rotateX(0) rotateY(0);
-    }
-    to {
-        transform: rotateX(720deg) rotateY(720deg);
-    }
-}
-
-
-.lower-cube {
-    position: absolute;
-    top: 90%; /* Adjust the position */
-    right: 630px; /* Adjust the position */
-    transform: translateY(50%); /* Adjust the transformation */
-}
-
 
 .services-section {
     background: rgb(0, 0, 0);
     padding: 100px 0; /* Increase padding to make the section longer */
-    margin-bottom: 500px;
+    margin-bottom: 400px;
 }
 
 .services-section .container {
@@ -427,31 +236,6 @@ p {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-}
-
-.services-section .services-images {
-    flex-basis: calc(50% - 20px); /* Adjust the width of the image container */
-    text-align: left; /* Align text to the left */
-    margin-left: 0; /* Remove the negative margin to reset positioning */
-    margin-right: 0; /* Remove the margin to align with the text */
-    max-width: 550px; /* Adjust the maximum width */
-    max-height: 750px; /* Adjust the maximum height */
-}
-
-
-.services-section .services-images img {
-    max-width: 550px; /* Adjust the maximum width as needed */
-    max-height: 400px; /* Adjust the maximum height as needed */
-    display: block;
-    margin: 0 auto;
-    animation: fadeInUp 1s ease forwards;
-    border-radius: 30px;
-}
-
-
-.services-section .services-text {
-    flex-basis: calc(52.5% - 20px);
-    text-align: right; /* Align text to the right */
 }
 
 .services-section h2 {
@@ -497,11 +281,8 @@ p {
 }
 
 .second-services-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .second-services-text {
@@ -525,12 +306,6 @@ p {
     margin-bottom: 250px; /* Adjust the top margin as needed */
 }
 
-
-
-.second-services-images .service {
-    max-width: 100%; /* Ensure image doesn't exceed its container */
-}
-
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
     .second-services-content {
@@ -548,32 +323,50 @@ p {
 
 
 .animated-line {
-    width: 100px; /* Adjust the width as needed */
-    height: 2px; /* Adjust the height as needed */
-    background-color: #fff; /* Adjust the color as needed */
-    margin-left: 0; /* Adjust the margin to align with the "About" text */
-    animation: slideInLeftToRight 1s forwards; /* Set the animation */
+    width: 0px; /* Start with a width of 0 */
+    height: 3px; /* Adjust the height as needed */
+    background-color: #ffffff; /* Adjust the color as needed */
+    position: absolute; /* Position the line */
+    bottom: calc(50% - 10px); /* Position it vertically in the middle of the section */
+    left: 38%; /* Start from the left edge of its container */
+    z-index: 1; /* Ensure it's above other content */
+    animation: expandFromLeft 1s forwards; /* Apply the animation */
 }
-
 .animated-line-services {
     width: 100px; /* Adjust the width as needed */
-    height: 2px; /* Adjust the height as needed */
+    height: 3px; /* Adjust the height as needed */
     background-color: #ffffff; /* Adjust the color as needed */
-    margin-left: auto; /* Adjust the margin to align with the right side */
-    margin-right: 0; /* Adjust the margin to align with the right side */
-    animation: slideLeftToRight 1s forwards; /* Set the animation */
+    margin-left: 34%; /* Adjust the margin to align with the left side */
+    margin-right: auto; /* Adjust the margin to align with the right side */
+    animation: slideLeftToRight 1s forwards;
     margin-top: -20px;
 }
 
-/* Define the animation */
-@keyframes slideInLeftToRight {
+.about-section .animated-line {
+    bottom: calc(50% - -40px); /* Position it vertically in the middle of the section */
+}
+
+.services-section .animated-line-services {
+    bottom: calc(50% - 110px); /* Position it vertically in the middle of the section */
+}
+
+@keyframes slideLeftToRight {
     from {
-        width: 0px; /* Start with no width */
-        margin-left: 0%; /* Start from the right side */
+        width: 0px;
+        transform: translateX(-50%);
     }
     to {
-        width: 300px; /* End with the desired width */
-        margin-left: 0; /* End at the left side */
+        width: 300px;
+        left: 0;
+    }
+}
+
+@keyframes expandFromLeft {
+    from {
+        width: 0px; /* Start with a width of 0 */
+    }
+    to {
+        width: 320px; /* Expand to the specified width */
     }
 }
 
@@ -584,17 +377,6 @@ p {
 .active-section .line {
     display: block;
 }
-
-
-@keyframes slideLeftToRight {
-    from {
-        width: 0; /* Start with no width */
-    }
-    to {
-        width: 300px; /* End with the desired width */
-    }
-}
-
 .circle-button {
     position: absolute;
     bottom: -250px; /* Adjusted to bring the button lower */
@@ -669,6 +451,15 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.ourwork-title h2 {
+    position: relative; /* Ensure relative positioning */
+    left: 70%; /* Adjust the left position to push it to the right */
+    transform: translateX(-50%); /* Center horizontally */
+    margin-top: -850px; /* Adjust margin as needed */
+    margin-bottom: 20px; /* Adjust margin as needed */
+    white-space: nowrap; /* Prevent title from wrapping */
 }
 
 .ourwork-item {
